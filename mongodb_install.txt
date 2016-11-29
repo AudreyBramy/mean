@@ -1,0 +1,30 @@
+# mongodb.org/download
+1. OpenSSL
+# OpenSSL is an open source project that provides a robust, commercial-grade, and full-featured toolkit for the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols. It is also a general-purpose cryptography library.
+
+2. Installer les paquets de la communauté MongoDB
+
+importer la clés publique
+> sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+
+Créer un ficher "list" et lui ajouter la ligne correspondante au téléchargement de mongodb
+> echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+
+mettre à jour le gestionnaire de paquets
+> sudo apt-get update
+
+Et finalement installer le paquer mongodb
+> sudo apt-get install -y mongodb-org
+
+Démarrer le serveur mongod
+> sudo mongod --dbpath /data/db
+
+Quand le serveur est démarrer on peut lancer la console
+> mongo
+
+Des exemples en console
+> db.test.insert({hello:"hello world"});
+
+> db.test.findOne({hello:"hello world"})
+
+> db // Liste toutes les collections

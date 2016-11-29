@@ -1,0 +1,13 @@
+# Update nodejs
+> nodejs -v
+> npm -v
+
+# install n (node version management)
+> sudo apt-get install npm
+> sudo npm n -g
+
+# list all the nodejs versions available
+> n ls
+
+# choose the version and install it
+> sudo n x.x
